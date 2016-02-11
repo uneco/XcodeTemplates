@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Kind</key>
+    <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+    <key>Identifier</key>
+    <string>com.apple.dt.unit.quartzComposerPlugIn</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.systemPlugInBase</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+    <key>Description</key>
+    <string>This template builds a custom patch for Quartz Composer as a QCPlugIn subclass.</string>
+    <key>SortOrder</key>
+    <integer>40</integer>
+    <key>Executables</key>
+    <array>
+        <dict>
+            <key>Reference</key>
+            <dict>
+                <key>Path</key>
+                <string>Applications/Quartz Composer.app</string>
+                <key>PathType</key>
+                <string>DeveloperDir</string>
+            </dict>
+        </dict>
+    </array>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>BuildPhases</key>
+			<array>
+				<dict>
+					<key>Class</key>
+					<string>Sources</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Frameworks</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Resources</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>ShellPath</key>
+					<string>/bin/sh</string>
+					<key>ShellScript</key>
+					<string># This shell script simply copies the built plug-in to &quot;~/Library/Graphics/Quartz Composer Plug-Ins&quot; and overrides any previous version at that location
+
+mkdir -p &quot;$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins&quot;
+rm -rf &quot;$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins/___PACKAGENAME___.plugin&quot;
+cp -rf &quot;$BUILT_PRODUCTS_DIR/___PACKAGENAME___.plugin&quot; &quot;$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins/&quot;
+</string>
+				</dict>
+			</array>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.quartzComposerPlugInTarget</string>
+			<key>SharedSettings</key>
+			<dict>
+				<key>INSTALL_PATH</key>
+				<string>$(HOME)/Library/Graphics/Quartz Composer Plug-Ins</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>plugin</string>
+            </dict>
+		</dict>
+	</array>
+    <key>Nodes</key>
+    <array>
+        <string>Info.plist:quartz</string>
+        <string>Info.plist:NSHumanReadableCopyright</string>
+        <string>___PACKAGENAMEASIDENTIFIER___PlugIn.h</string>
+        <string>___PACKAGENAMEASIDENTIFIER___PlugIn.m</string>
+    </array>
+	<key>Definitions</key>
+	<dict>
+		<key>Info.plist:quartz</key>
+		<string>&lt;key&gt;CFBundlePackageType&lt;/key&gt;
+&lt;string&gt;BNDL&lt;/string&gt;
+&lt;key&gt;QCPlugInClasses&lt;/key&gt;
+&lt;array&gt;
+	&lt;string&gt;___PACKAGENAMEASIDENTIFIER___PlugIn&lt;/string&gt;
+&lt;/array&gt;
+</string>
+		<key>___PACKAGENAMEASIDENTIFIER___PlugIn.h</key>
+		<dict>
+			<key>Path</key>
+			<string>___PACKAGENAMEASIDENTIFIER___PlugIn.h</string>
+		</dict>
+		<key>___PACKAGENAMEASIDENTIFIER___PlugIn.m</key>
+		<dict>
+			<key>Beginning</key>
+			<string>//
+//  ___PACKAGENAMEASIDENTIFIER___PlugIn.m
+//  ___PACKAGENAME___
+//
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//___COPYRIGHT___
+//
+
+// It&apos;s highly recommended to use CGL macros instead of changing the current context for plug-ins that perform OpenGL rendering
+#import &lt;OpenGL/CGLMacro.h&gt;
+
+#import &quot;___PACKAGENAMEASIDENTIFIER___PlugIn.h&quot;
+
+#define	kQCPlugIn_Name				@&quot;___PACKAGENAME___&quot;
+#define	kQCPlugIn_Description		@&quot;___PACKAGENAME___ description&quot;
+
+@implementation ___PACKAGENAMEASIDENTIFIER___PlugIn
+
+// Here you need to declare the input / output properties as dynamic as Quartz Composer will handle their implementation
+//@dynamic inputFoo, outputBar;
+
++ (NSDictionary *)attributes
+{
+	// Return a dictionary of attributes describing the plug-in (QCPlugInAttributeNameKey, QCPlugInAttributeDescriptionKey...).
+    return @{QCPlugInAttributeNameKey:kQCPlugIn_Name, QCPlugInAttributeDescriptionKey:kQCPlugIn_Description};
+}
+
++ (NSDictionary *)attributesForPropertyPortWithKey:(NSString *)key
+{
+	// Specify the optional attributes for property based ports (QCPortAttributeNameKey, QCPortAttributeDefaultValueKey...).
+	return nil;
+}
+
++ (QCPlugInExecutionMode)executionMode
+{
+	// Return the execution mode of the plug-in: kQCPlugInExecutionModeProvider, kQCPlugInExecutionModeProcessor, or kQCPlugInExecutionModeConsumer.
+	return kQCPlugInExecutionModeProcessor;
+}
+
++ (QCPlugInTimeMode)timeMode
+{
+	// Return the time dependency mode of the plug-in: kQCPlugInTimeModeNone, kQCPlugInTimeModeIdle or kQCPlugInTimeModeTimeBase.
+	return kQCPlugInTimeModeNone;
+}
+
+- (instancetype)init
+{
+	self = [super init];
+	if (self) {
+		// Allocate any permanent resource required by the plug-in.
+	}
+	
+	return self;
+}
+
+</string>
+			<key>End</key>
+			<string>@end
+
+@implementation ___PACKAGENAMEASIDENTIFIER___PlugIn (Execution)
+
+- (BOOL)startExecution:(id &lt;QCPlugInContext&gt;)context
+{
+	// Called by Quartz Composer when rendering of the composition starts: perform any required setup for the plug-in.
+	// Return NO in case of fatal failure (this will prevent rendering of the composition to start).
+	
+	return YES;
+}
+
+- (void)enableExecution:(id &lt;QCPlugInContext&gt;)context
+{
+	// Called by Quartz Composer when the plug-in instance starts being used by Quartz Composer.
+}
+
+- (BOOL)execute:(id &lt;QCPlugInContext&gt;)context atTime:(NSTimeInterval)time withArguments:(NSDictionary *)arguments
+{
+	/*
+	Called by Quartz Composer whenever the plug-in instance needs to execute.
+	Only read from the plug-in inputs and produce a result (by writing to the plug-in outputs or rendering to the destination OpenGL context) within that method and nowhere else.
+	Return NO in case of failure during the execution (this will prevent rendering of the current frame to complete).
+	
+	The OpenGL context for rendering can be accessed and defined for CGL macros using:
+	CGLContextObj cgl_ctx = [context CGLContextObj];
+	*/
+	
+	return YES;
+}
+
+- (void)disableExecution:(id &lt;QCPlugInContext&gt;)context
+{
+	// Called by Quartz Composer when the plug-in instance stops being used by Quartz Composer.
+}
+
+- (void)stopExecution:(id &lt;QCPlugInContext&gt;)context
+{
+	// Called by Quartz Composer when rendering of the composition stops: perform any required cleanup for the plug-in.
+}
+
+@end</string>
+		</dict>
+	</dict>
+	<key>NSSupportsSuddenTermination</key>
+	<false/>
+</dict>
+</plist>

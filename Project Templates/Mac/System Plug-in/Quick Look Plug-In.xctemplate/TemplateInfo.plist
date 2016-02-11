@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.quickLookPlugIn</string>
+    <key>Ancestors</key>
+    <array>
+        <string>com.apple.dt.unit.systemPlugInBase</string>
+    </array>
+	<key>Concrete</key>
+	<true/>
+	<key>Description</key>
+	<string>This template builds a Quick Look generator plugin that can be used with OS X 10.5 or later.</string>
+    <key>SortOrder</key>
+    <integer>30</integer>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.cocoaQuickLookPlugInTarget</string>
+			<key>SharedSettings</key>
+			<dict>
+				<key>INSTALL_PATH</key>
+				<string>/Library/QuickLook</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>qlgenerator</string>
+            </dict>
+			<key>BuildPhases</key>
+			<array>
+				<dict>
+					<key>Class</key>
+					<string>Sources</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Frameworks</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Headers</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Resources</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>Nodes</key>
+	<array>
+		<string>Info.plist:quickLook</string>
+		<string>Info.plist:NSHumanReadableCopyright</string>
+		<string>GenerateThumbnailForURL.c</string>
+		<string>GeneratePreviewForURL.c</string>
+		<string>main.c</string>
+	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>Info.plist:quickLook</key>
+		<string>&lt;key&gt;CFBundleDocumentTypes&lt;/key&gt;
+&lt;array&gt;
+	&lt;dict&gt;
+		&lt;key&gt;CFBundleTypeRole&lt;/key&gt;
+		&lt;string&gt;QLGenerator&lt;/string&gt;
+		&lt;key&gt;LSItemContentTypes&lt;/key&gt;
+		&lt;array&gt;
+			&lt;string&gt;SUPPORTED_UTI_TYPE&lt;/string&gt;
+		&lt;/array&gt;
+	&lt;/dict&gt;
+&lt;/array&gt;
+&lt;key&gt;CFPlugInDynamicRegisterFunction&lt;/key&gt;
+&lt;string&gt;&lt;/string&gt;
+&lt;key&gt;CFPlugInDynamicRegistration&lt;/key&gt;
+&lt;string&gt;NO&lt;/string&gt;
+&lt;key&gt;CFPlugInFactories&lt;/key&gt;
+&lt;dict&gt;
+	&lt;key&gt;___UUID___&lt;/key&gt;
+	&lt;string&gt;QuickLookGeneratorPluginFactory&lt;/string&gt;
+&lt;/dict&gt;
+&lt;key&gt;CFPlugInTypes&lt;/key&gt;
+&lt;dict&gt;
+	&lt;key&gt;5E2D9680-5022-40FA-B806-43349622E5B9&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;___UUID___&lt;/string&gt;
+	&lt;/array&gt;
+&lt;/dict&gt;
+&lt;key&gt;CFPlugInUnloadFunction&lt;/key&gt;
+&lt;string&gt;&lt;/string&gt;
+&lt;key&gt;QLNeedsToBeRunInMainThread&lt;/key&gt;
+&lt;false/&gt;
+&lt;key&gt;QLPreviewHeight&lt;/key&gt;
+&lt;real&gt;600&lt;/real&gt;
+&lt;key&gt;QLPreviewWidth&lt;/key&gt;
+&lt;real&gt;800&lt;/real&gt;
+&lt;key&gt;QLSupportsConcurrentRequests&lt;/key&gt;
+&lt;false/&gt;
+&lt;key&gt;QLThumbnailMinimumSize&lt;/key&gt;
+&lt;real&gt;17&lt;/real&gt;</string>
+		<key>GenerateThumbnailForURL.c</key>
+		<dict>
+			<key>Path</key>
+			<string>GenerateThumbnailForURL.c</string>
+		</dict>
+		<key>GeneratePreviewForURL.c</key>
+		<dict>
+			<key>Path</key>
+			<string>GeneratePreviewForURL.c</string>
+		</dict>
+		<key>main.c</key>
+		<dict>
+			<key>Path</key>
+			<string>main.c</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

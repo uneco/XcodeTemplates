@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Kind</key>
+    <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+    <key>Identifier</key>
+    <string>com.apple.dt.unit.xpcservicebase</string>
+    <key>Ancestors</key>
+    <array>
+        <string>com.apple.dt.unit.bundleBase</string>
+    </array>
+    <key>Targets</key>
+    <array>
+        <dict>
+            <key>ProductType</key>
+            <string>com.apple.product-type.xpc-service</string>
+            <key>SharedSettings</key>
+            <dict>
+                <key>SKIP_INSTALL</key>
+                <string>YES</string>
+            </dict>
+            <key>BuildPhases</key>
+            <array>
+                <dict>
+                    <key>Class</key>
+                    <string>Sources</string>
+                </dict>
+                <dict>
+                    <key>Class</key>
+                    <string>Frameworks</string>
+                </dict>
+                <dict>
+                    <key>Class</key>
+                    <string>Resources</string>
+                </dict>
+            </array>
+        </dict>
+    </array>
+    <key>Nodes</key>
+    <array>
+        <string>Info.plist:PackageType</string>
+        <string>Info.plist:DisplayName</string>
+        <string>Info.plist:NSHumanReadableCopyright</string>
+        <string>Info.plist:XPCService</string>
+    </array>
+    <key>Definitions</key>
+    <dict>
+        <key>Info.plist:PackageType</key>
+        <string>&lt;key&gt;CFBundlePackageType&lt;/key&gt;
+&lt;string&gt;XPC!&lt;/string&gt;
+</string>
+        <key>Info.plist:DisplayName</key>
+        <string>&lt;key&gt;CFBundleDisplayName&lt;/key&gt;
+&lt;string&gt;___PACKAGENAME___&lt;/string&gt;
+</string>
+        <key>Info.plist:XPCService</key>
+        <string>&lt;key&gt;XPCService&lt;/key&gt;
+&lt;dict&gt;
+    &lt;key&gt;ServiceType&lt;/key&gt;
+    &lt;string&gt;Application&lt;/string&gt;
+&lt;/dict&gt;
+</string>
+    </dict>
+</dict>
+</plist>

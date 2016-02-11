@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.coreDataApplication</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.cocoaApplicationDocumentBased</string>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>coreData</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Name</key>
+			<string>Use Core Data</string>
+			<key>Description</key>
+			<string>Whether the application should use the Core Data framework for storage</string>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>Default</key>
+			<string>false</string>
+			<key>Units</key>
+			<dict>
+				<key>true</key>
+				<array>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>documentBased</key>
+							<string>true</string>
+						</dict>
+						<key>Nodes</key>
+						<array>
+							<string>Document.xcdatamodeld</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>Info.plist:DocumentTypes</key>
+							<string>&lt;key&gt;CFBundleDocumentTypes&lt;/key&gt;
+&lt;array&gt;
+    &lt;dict&gt;
+        &lt;key&gt;CFBundleTypeExtensions&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;binary&lt;/string&gt;
+        &lt;/array&gt;
+        &lt;key&gt;CFBundleTypeMIMETypes&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;application/octet-stream&lt;/string&gt;
+        &lt;/array&gt;
+        &lt;key&gt;CFBundleTypeName&lt;/key&gt;
+        &lt;string&gt;Binary&lt;/string&gt;
+        &lt;key&gt;CFBundleTypeRole&lt;/key&gt;
+        &lt;string&gt;Editor&lt;/string&gt;
+        &lt;key&gt;LSTypeIsPackage&lt;/key&gt;
+        &lt;false/&gt;
+        &lt;key&gt;NSDocumentClass&lt;/key&gt;
+        &lt;string&gt;___VARIABLE_moduleNamePrefixForClasses___Document&lt;/string&gt;
+        &lt;key&gt;NSPersistentStoreTypeKey&lt;/key&gt;
+        &lt;string&gt;Binary&lt;/string&gt;
+    &lt;/dict&gt;
+    &lt;dict&gt;
+        &lt;key&gt;CFBundleTypeExtensions&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;sqlite&lt;/string&gt;
+        &lt;/array&gt;
+        &lt;key&gt;CFBundleTypeMIMETypes&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;application/octet-stream&lt;/string&gt;
+        &lt;/array&gt;
+        &lt;key&gt;CFBundleTypeName&lt;/key&gt;
+        &lt;string&gt;SQLite&lt;/string&gt;
+        &lt;key&gt;CFBundleTypeRole&lt;/key&gt;
+        &lt;string&gt;Editor&lt;/string&gt;
+        &lt;key&gt;LSTypeIsPackage&lt;/key&gt;
+        &lt;false/&gt;
+        &lt;key&gt;NSDocumentClass&lt;/key&gt;
+        &lt;string&gt;___VARIABLE_moduleNamePrefixForClasses___Document&lt;/string&gt;
+        &lt;key&gt;NSPersistentStoreTypeKey&lt;/key&gt;
+        &lt;string&gt;SQLite&lt;/string&gt;
+    &lt;/dict&gt;
+    &lt;dict&gt;
+        &lt;key&gt;CFBundleTypeExtensions&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;xml&lt;/string&gt;
+        &lt;/array&gt;
+        &lt;key&gt;CFBundleTypeIconFile&lt;/key&gt;
+        &lt;string&gt;&lt;/string&gt;
+        &lt;key&gt;CFBundleTypeMIMETypes&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;text/xml&lt;/string&gt;
+        &lt;/array&gt;
+        &lt;key&gt;CFBundleTypeName&lt;/key&gt;
+        &lt;string&gt;XML&lt;/string&gt;
+        &lt;key&gt;CFBundleTypeOSTypes&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;????&lt;/string&gt;
+        &lt;/array&gt;
+        &lt;key&gt;CFBundleTypeRole&lt;/key&gt;
+        &lt;string&gt;Editor&lt;/string&gt;
+        &lt;key&gt;LSTypeIsPackage&lt;/key&gt;
+        &lt;false/&gt;
+        &lt;key&gt;NSDocumentClass&lt;/key&gt;
+        &lt;string&gt;___VARIABLE_moduleNamePrefixForClasses___Document&lt;/string&gt;
+        &lt;key&gt;NSPersistentStoreTypeKey&lt;/key&gt;
+        &lt;string&gt;XML&lt;/string&gt;
+    &lt;/dict&gt;
+&lt;/array&gt;
+                            </string>
+							<key>Document.xcdatamodeld</key>
+							<dict>
+								<key>Path</key>
+								<string>Document.xcdatamodeld</string>
+                                <key>SortOrder</key>
+                                <integer>99</integer>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>documentBased</key>
+							<string>true</string>
+							<key>languageChoice</key>
+							<string>Objective-C</string>
+						</dict>
+						<key>Definitions</key>
+						<dict>
+							<key>Document.h:interface</key>
+							<dict>
+								<key>Beginning</key>
+								<string>@interface Document : NSPersistentDocument</string>
+								<key>End</key>
+								<string>@end</string>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>documentBased</key>
+							<string>true</string>
+							<key>languageChoice</key>
+							<string>Swift</string>
+						</dict>
+						<key>Definitions</key>
+						<dict>
+							<key>Document.swift:implementation</key>
+							<dict>
+								<key>Beginning</key>
+								<string>class Document: NSPersistentDocument {
+</string>
+								<key>End</key>
+								<string>}</string>
+								<key>Indent</key>
+								<integer>1</integer>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>documentBased</key>
+							<string>false</string>
+						</dict>
+						<key>Nodes</key>
+						<array>
+							<string>___PACKAGENAMEASIDENTIFIER___.xcdatamodeld</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>___PACKAGENAMEASIDENTIFIER___.xcdatamodeld</key>
+							<dict>
+								<key>Path</key>
+								<string>___PACKAGENAMEASIDENTIFIER___.xcdatamodeld</string>
+                                <key>SortOrder</key>
+                                <integer>99</integer>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>documentBased</key>
+							<string>false</string>
+							<key>languageChoice</key>
+							<string>Objective-C</string>
+						</dict>
+						<key>Nodes</key>
+						<array>
+							<string>AppDelegate.h:interface:coreData</string>
+							<string>AppDelegate.m:extension:saveAction</string>
+							<string>AppDelegate.m:implementation:coreData</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>AppDelegate.h:interface:coreData</key>
+							<string>@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+</string>
+							<key>AppDelegate.m:extension:saveAction</key>
+							<string>- (IBAction)saveAction:(id)sender;
+</string>
+							<key>AppDelegate.m:implementation:coreData</key>
+							<string>#pragma mark - Core Data stack
+
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize managedObjectContext = _managedObjectContext;
+
+- (NSURL *)applicationDocumentsDirectory {
+    // The directory the application uses to store the Core Data store file. This code uses a directory named &quot;___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___.___PACKAGENAMEASIDENTIFIER___&quot; in the user&apos;s Application Support directory.
+    NSURL *appSupportURL = [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
+    return [appSupportURL URLByAppendingPathComponent:@&quot;___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___.___PACKAGENAMEASIDENTIFIER___&quot;];
+}
+
+- (NSManagedObjectModel *)managedObjectModel {
+    // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
+    if (_managedObjectModel) {
+        return _managedObjectModel;
+    }
+	
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@&quot;___PACKAGENAMEASIDENTIFIER___&quot; withExtension:@&quot;momd&quot;];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.)
+    if (_persistentStoreCoordinator) {
+        return _persistentStoreCoordinator;
+    }
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *applicationDocumentsDirectory = [self applicationDocumentsDirectory];
+    BOOL shouldFail = NO;
+    NSError *error = nil;
+    NSString *failureReason = @&quot;There was an error creating or loading the application&apos;s saved data.&quot;;
+    
+    // Make sure the application files directory is there
+    NSDictionary *properties = [applicationDocumentsDirectory resourceValuesForKeys:@[NSURLIsDirectoryKey] error:&amp;error];
+    if (properties) {
+        if (![properties[NSURLIsDirectoryKey] boolValue]) {
+            failureReason = [NSString stringWithFormat:@&quot;Expected a folder to store application data, found a file (%@).&quot;, [applicationDocumentsDirectory path]];
+            shouldFail = YES;
+        }
+    } else if ([error code] == NSFileReadNoSuchFileError) {
+        error = nil;
+        [fileManager createDirectoryAtPath:[applicationDocumentsDirectory path] withIntermediateDirectories:YES attributes:nil error:&amp;error];
+    }
+    
+    if (!shouldFail &amp;&amp; !error) {
+        NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+        NSURL *url = [applicationDocumentsDirectory URLByAppendingPathComponent:@&quot;OSXCoreDataObjC.storedata&quot;];
+        if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&amp;error]) {
+            coordinator = nil;
+        }
+        _persistentStoreCoordinator = coordinator;
+    }
+    
+    if (shouldFail || error) {
+        // Report any error we got.
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        dict[NSLocalizedDescriptionKey] = @&quot;Failed to initialize the application&apos;s saved data&quot;;
+        dict[NSLocalizedFailureReasonErrorKey] = failureReason;
+        if (error) {
+            dict[NSUnderlyingErrorKey] = error;
+        }
+        error = [NSError errorWithDomain:@&quot;YOUR_ERROR_DOMAIN&quot; code:9999 userInfo:dict];
+        [[NSApplication sharedApplication] presentError:error];
+    }
+    return _persistentStoreCoordinator;
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
+    if (_managedObjectContext) {
+        return _managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (!coordinator) {
+        return nil;
+    }
+    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+
+    return _managedObjectContext;
+}
+
+#pragma mark - Core Data Saving and Undo support
+
+- (IBAction)saveAction:(id)sender {
+    // Performs the save action for the application, which is to send the save: message to the application&apos;s managed object context. Any encountered errors are presented to the user.
+    if (![[self managedObjectContext] commitEditing]) {
+        NSLog(@&quot;%@:%@ unable to commit editing before saving&quot;, [self class], NSStringFromSelector(_cmd));
+    }
+    
+    NSError *error = nil;
+    if ([[self managedObjectContext] hasChanges] &amp;&amp; ![[self managedObjectContext] save:&amp;error]) {
+        [[NSApplication sharedApplication] presentError:error];
+    }
+}
+
+- (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window {
+    // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
+    return [[self managedObjectContext] undoManager];
+}
+
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
+    // Save changes in the application&apos;s managed object context before the application terminates.
+    
+    if (!_managedObjectContext) {
+        return NSTerminateNow;
+    }
+    
+    if (![[self managedObjectContext] commitEditing]) {
+        NSLog(@&quot;%@:%@ unable to commit editing to terminate&quot;, [self class], NSStringFromSelector(_cmd));
+        return NSTerminateCancel;
+    }
+    
+    if (![[self managedObjectContext] hasChanges]) {
+        return NSTerminateNow;
+    }
+    
+    NSError *error = nil;
+    if (![[self managedObjectContext] save:&amp;error]) {
+
+        // Customize this code block to include application-specific recovery steps.              
+        BOOL result = [sender presentError:error];
+        if (result) {
+            return NSTerminateCancel;
+        }
+
+        NSString *question = NSLocalizedString(@&quot;Could not save changes while quitting. Quit anyway?&quot;, @&quot;Quit without saves error question message&quot;);
+        NSString *info = NSLocalizedString(@&quot;Quitting now will lose any changes you have made since the last successful save&quot;, @&quot;Quit without saves error question info&quot;);
+        NSString *quitButton = NSLocalizedString(@&quot;Quit anyway&quot;, @&quot;Quit anyway button title&quot;);
+        NSString *cancelButton = NSLocalizedString(@&quot;Cancel&quot;, @&quot;Cancel button title&quot;);
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setMessageText:question];
+        [alert setInformativeText:info];
+        [alert addButtonWithTitle:quitButton];
+        [alert addButtonWithTitle:cancelButton];
+
+        NSInteger answer = [alert runModal];
+        
+        if (answer == NSAlertFirstButtonReturn) {
+            return NSTerminateCancel;
+        }
+    }
+
+    return NSTerminateNow;
+}
+</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>documentBased</key>
+							<string>false</string>
+							<key>languageChoice</key>
+							<string>Swift</string>
+						</dict>
+						<key>Nodes</key>
+						<array>
+							<string>AppDelegate.swift:implementation:coreData</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>AppDelegate.swift:implementation:coreData</key>
+							<string>// MARK: - Core Data stack
+
+lazy var applicationDocumentsDirectory: NSURL = {
+    // The directory the application uses to store the Core Data store file. This code uses a directory named &quot;___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___.___PACKAGENAMEASIDENTIFIER___&quot; in the user&apos;s Application Support directory.
+    let urls = NSFileManager.defaultManager().URLsForDirectory(.ApplicationSupportDirectory, inDomains: .UserDomainMask)
+    let appSupportURL = urls[urls.count - 1]
+    return appSupportURL.URLByAppendingPathComponent(&quot;___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___.___PACKAGENAMEASIDENTIFIER___&quot;)
+}()
+
+lazy var managedObjectModel: NSManagedObjectModel = {
+    // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
+    let modelURL = NSBundle.mainBundle().URLForResource(&quot;___PACKAGENAMEASIDENTIFIER___&quot;, withExtension: &quot;momd&quot;)!
+    return NSManagedObjectModel(contentsOfURL: modelURL)!
+}()
+
+lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+    // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.) This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
+    let fileManager = NSFileManager.defaultManager()
+    var failError: NSError? = nil
+    var shouldFail = false
+    var failureReason = "There was an error creating or loading the application's saved data."
+
+    // Make sure the application files directory is there
+    do {
+        let properties = try self.applicationDocumentsDirectory.resourceValuesForKeys([NSURLIsDirectoryKey])
+        if !properties[NSURLIsDirectoryKey]!.boolValue {
+            failureReason = "Expected a folder to store application data, found a file \(self.applicationDocumentsDirectory.path)."
+            shouldFail = true
+        }
+    } catch  {
+        let nserror = error as NSError
+        if nserror.code == NSFileReadNoSuchFileError {
+            do {
+                try fileManager.createDirectoryAtPath(self.applicationDocumentsDirectory.path!, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                failError = nserror
+            }
+        } else {
+            failError = nserror
+        }
+    }
+    
+    // Create the coordinator and store
+    var coordinator: NSPersistentStoreCoordinator? = nil
+    if failError == nil {
+        coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("CocoaAppCD.storedata")
+        do {
+            try coordinator!.addPersistentStoreWithType(NSXMLStoreType, configuration: nil, URL: url, options: nil)
+        } catch {
+            failError = error as NSError
+        }
+    }
+    
+    if shouldFail || (failError != nil) {
+        // Report any error we got.
+        var dict = [String: AnyObject]()
+        dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
+        dict[NSLocalizedFailureReasonErrorKey] = failureReason
+        if failError != nil {
+            dict[NSUnderlyingErrorKey] = failError
+        }
+        let error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+        NSApplication.sharedApplication().presentError(error)
+        abort()
+    } else {
+        return coordinator!
+    }
+}()
+
+lazy var managedObjectContext: NSManagedObjectContext = {
+    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
+    let coordinator = self.persistentStoreCoordinator
+    var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+    managedObjectContext.persistentStoreCoordinator = coordinator
+    return managedObjectContext
+}()
+
+// MARK: - Core Data Saving and Undo support
+
+@IBAction func saveAction(sender: AnyObject!) {
+    // Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
+    if !managedObjectContext.commitEditing() {
+        NSLog("\(NSStringFromClass(self.dynamicType)) unable to commit editing before saving")
+    }
+    if managedObjectContext.hasChanges {
+        do {
+            try managedObjectContext.save()
+        } catch {
+            let nserror = error as NSError
+            NSApplication.sharedApplication().presentError(nserror)
+        }
+    }
+}
+
+func windowWillReturnUndoManager(window: NSWindow) -&gt; NSUndoManager? {
+    // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
+    return managedObjectContext.undoManager
+}
+
+func applicationShouldTerminate(sender: NSApplication) -&gt; NSApplicationTerminateReply {
+    // Save changes in the application's managed object context before the application terminates.
+    
+    if !managedObjectContext.commitEditing() {
+        NSLog("\(NSStringFromClass(self.dynamicType)) unable to commit editing to terminate")
+        return .TerminateCancel
+    }
+    
+    if !managedObjectContext.hasChanges {
+        return .TerminateNow
+    }
+    
+    do {
+        try managedObjectContext.save()
+    } catch {
+        let nserror = error as NSError
+        // Customize this code block to include application-specific recovery steps.
+        let result = sender.presentError(nserror)
+        if (result) {
+            return .TerminateCancel
+        }
+        
+        let question = NSLocalizedString("Could not save changes while quitting. Quit anyway?", comment: "Quit without saves error question message")
+        let info = NSLocalizedString("Quitting now will lose any changes you have made since the last successful save", comment: "Quit without saves error question info");
+        let quitButton = NSLocalizedString("Quit anyway", comment: "Quit anyway button title")
+        let cancelButton = NSLocalizedString("Cancel", comment: "Cancel button title")
+        let alert = NSAlert()
+        alert.messageText = question
+        alert.informativeText = info
+        alert.addButtonWithTitle(quitButton)
+        alert.addButtonWithTitle(cancelButton)
+        
+        let answer = alert.runModal()
+        if answer == NSAlertFirstButtonReturn {
+            return .TerminateCancel
+        }
+    }
+    // If we got here, it is time to quit.
+    return .TerminateNow
+}
+</string>
+						</dict>
+					</dict>
+				</array>
+				<key>false</key>
+				<array>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>documentBased</key>
+							<string>true</string>
+							<key>languageChoice</key>
+							<string>Objective-C</string>
+						</dict>
+						<key>Nodes</key>
+						<array>
+							<string>Document.m:implementation:methods:dataOfType(- (NSData *\)dataOfType:(NSString *\)typeName error:(NSError **\)outError)</string>
+							<string>Document.m:implementation:methods:dataOfType:comments</string>
+							<string>Document.m:implementation:methods:dataOfType:code</string>
+							<string>Document.m:implementation:methods:readFromData(- (BOOL\)readFromData:(NSData *\)data ofType:(NSString *\)typeName error:(NSError **\)outError)</string>
+							<string>Document.m:implementation:methods:readFromData:comments</string>
+							<string>Document.m:implementation:methods:readFromData:code</string>
+							<string>Document.m:implementation:methods:readFromData:comments:isEntireFileLoaded</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>Document.m:implementation:methods:dataOfType:comments</key>
+							<string>// Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
+// You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
+</string>
+							<key>Document.m:implementation:methods:dataOfType:code</key>
+							<string>[NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
+return nil;
+</string>
+							<key>Document.m:implementation:methods:readFromData:comments</key>
+							<string>// Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
+// You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.</string>
+							<key>Document.m:implementation:methods:readFromData:code</key>
+							<string>[NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
+return YES;
+</string>
+							<key>Document.m:implementation:methods:readFromData:comments:isEntireFileLoaded</key>
+							<string>// If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>documentBased</key>
+							<string>true</string>
+							<key>languageChoice</key>
+							<string>Swift</string>
+						</dict>
+						<key>Nodes</key>
+						<array>
+							<string>Document.swift:implementation:methods:dataOfType(override func dataOfType(typeName: String\) throws -&gt; NSData)</string>
+							<string>Document.swift:implementation:methods:dataOfType:comments</string>
+							<string>Document.swift:implementation:methods:dataOfType:code</string>
+							<string>Document.swift:implementation:methods:readFromData(override func readFromData(data: NSData, ofType typeName: String\) throws)</string>
+							<string>Document.swift:implementation:methods:readFromData:comments</string>
+							<string>Document.swift:implementation:methods:readFromData:code</string>
+							<string>Document.swift:implementation:methods:readFromData:comments:isEntireFileLoaded</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>Document.swift:implementation:methods:dataOfType:comments</key>
+							<string>// Insert code here to write your document to data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning nil.
+// You can also choose to override fileWrapperOfType:error:, writeToURL:ofType:error:, or writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
+</string>
+							<key>Document.swift:implementation:methods:dataOfType:code</key>
+                            <string>throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+</string>
+							<key>Document.swift:implementation:methods:readFromData:comments</key>
+							<string>// Insert code here to read your document from the given data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning false.
+// You can also choose to override readFromFileWrapper:ofType:error: or readFromURL:ofType:error: instead.</string>
+							<key>Document.swift:implementation:methods:readFromData:code</key>
+                            <string>throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+</string>
+							<key>Document.swift:implementation:methods:readFromData:comments:isEntireFileLoaded</key>
+							<string>// If you override either of these, you should also override -isEntireFileLoaded to return false if the contents are lazily loaded.</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

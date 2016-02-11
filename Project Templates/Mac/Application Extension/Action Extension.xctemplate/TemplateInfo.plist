@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.actionextensionosx</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.osxAppExtensionBase</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>Description</key>
+	<string>This template builds an Action with UI application extension.</string>
+	<key>SortOrder</key>
+	<integer>3</integer>
+    <key>Options</key>
+    <array>
+        <dict>
+            <key>Identifier</key>
+            <string>actionType</string>
+            <key>NotPersisted</key>
+            <true/>
+            <key>Name</key>
+            <string>Action Type:</string>
+            <key>Description</key>
+            <string>An action that presents an interface has a view controller for the user to interact with. An action that requires no user input should present no interface.</string>
+            <key>Type</key>
+            <string>popup</string>
+            <key>Values</key>
+            <array>
+                <string>Presents User Interface</string>
+                <string>No User Interface</string>
+            </array>
+            <key>Default</key>
+            <string>Presents User Interface</string>
+            <key>Units</key>
+            <dict>
+                <key>Presents User Interface</key>
+                <array>
+                    <dict>
+                        <key>RequiredOptions</key>
+                        <dict>
+                            <key>languageChoice</key>
+                            <string>Objective-C</string>
+                        </dict>
+                        <key>Nodes</key>
+                        <array>
+                            <string>ActionViewController.h</string>
+                            <string>ActionViewController.m</string>
+                        </array>
+                        <key>Definitions</key>
+                        <dict>
+                            <key>ActionViewController.h</key>
+                            <dict>
+                                <key>Path</key>
+                                <string>ActionViewController.h</string>
+                            </dict>
+                            <key>ActionViewController.m</key>
+                            <dict>
+                                <key>Path</key>
+                                <string>ActionViewController.m</string>
+                            </dict>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>RequiredOptions</key>
+                        <dict>
+                            <key>languageChoice</key>
+                            <string>Swift</string>
+                        </dict>
+                        <key>Nodes</key>
+                        <array>
+                            <string>ActionViewController.swift</string>
+                        </array>
+                        <key>Definitions</key>
+                        <dict>
+                            <key>ActionViewController.swift</key>
+                            <dict>
+                                <key>Path</key>
+                                <string>ActionViewController.swift</string>
+                            </dict>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>Targets</key>
+                        <array>
+                            <dict>
+                                <key>TargetIdentifier</key>
+                                <string>com.apple.dt.actionExtension</string>
+                                <key>SharedSettings</key>
+                                <dict>
+                                    <key>COMBINE_HIDPI_IMAGES</key>
+                                    <string>YES</string>
+                                    <key>CODE_SIGN_ENTITLEMENTS</key>
+                                    <string>___PACKAGENAME___/___PACKAGENAMEASIDENTIFIER___.entitlements</string>
+                                </dict>
+                            </dict>
+                        </array>
+                        <key>Nodes</key>
+                        <array>
+                            <string>Info.plist:NSExtension</string>
+                            <string>Base.lproj/ActionViewController.xib</string>
+                        </array>
+                        <key>Definitions</key>
+                        <dict>
+                            <key>Info.plist:NSExtension</key>
+                            <string>&lt;key&gt;NSExtension&lt;/key&gt;
+&lt;dict&gt;
+    &lt;key&gt;NSExtensionAttributes&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;NSExtensionActivationRule&lt;/key&gt;
+        &lt;string&gt;TRUEPREDICATE&lt;/string&gt;
+        &lt;key&gt;NSExtensionServiceRoleType&lt;/key&gt;
+        &lt;string&gt;NSExtensionServiceRoleTypeEditor&lt;/string&gt;
+    &lt;/dict&gt;
+    &lt;key&gt;NSExtensionPrincipalClass&lt;/key&gt;
+    &lt;string&gt;___VARIABLE_moduleNamePrefixForClasses:XML___ActionViewController&lt;/string&gt;
+    &lt;key&gt;NSExtensionPointIdentifier&lt;/key&gt;
+    &lt;string&gt;com.apple.ui-services&lt;/string&gt;
+&lt;/dict&gt;
+&lt;key&gt;CFBundleIconFile&lt;/key&gt;
+&lt;string&gt;icon&lt;/string&gt;
+</string>
+                            <key>Base.lproj/ActionViewController.xib</key>
+                            <dict>
+                                <key>Path</key>
+                                <string>ActionViewController.xib</string>
+                                <key>SortOrder</key>
+                                <integer>99</integer>
+                            </dict>
+                        </dict>
+                    </dict>
+                </array>
+                <key>No User Interface</key>
+                <array>
+                    <dict>
+                        <key>RequiredOptions</key>
+                        <dict>
+                            <key>languageChoice</key>
+                            <string>Objective-C</string>
+                        </dict>
+                        <key>Nodes</key>
+                        <array>
+                            <string>ActionRequestHandler.h</string>
+                            <string>ActionRequestHandler.m</string>
+                        </array>
+                        <key>Definitions</key>
+                        <dict>
+                            <key>ActionRequestHandler.h</key>
+                            <dict>
+                                <key>Path</key>
+                                <string>ActionRequestHandler.h</string>
+                            </dict>
+                            <key>ActionRequestHandler.m</key>
+                            <dict>
+                                <key>Path</key>
+                                <string>ActionRequestHandler.m</string>
+                            </dict>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>RequiredOptions</key>
+                        <dict>
+                            <key>languageChoice</key>
+                            <string>Swift</string>
+                        </dict>
+                        <key>Nodes</key>
+                        <array>
+                            <string>ActionRequestHandler.swift</string>
+                        </array>
+                        <key>Definitions</key>
+                        <dict>
+                            <key>ActionRequestHandler.swift</key>
+                            <dict>
+                                <key>Path</key>
+                                <string>ActionRequestHandler.swift</string>
+                            </dict>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>Targets</key>
+                        <array>
+                            <dict>
+                                <key>TargetIdentifier</key>
+                                <string>com.apple.dt.actionExtension</string>
+                                <key>SharedSettings</key>
+                                <dict>
+                                    <key>COMBINE_HIDPI_IMAGES</key>
+                                    <string>YES</string>
+                                    <key>CODE_SIGN_ENTITLEMENTS</key>
+                                    <string>___PACKAGENAME___/___PACKAGENAMEASIDENTIFIER___.entitlements</string>
+                                </dict>
+                                <key>Frameworks</key>
+                                <array>
+                                    <string>Cocoa</string>
+                                </array>
+                            </dict>
+                        </array>
+                        <key>Nodes</key>
+                        <array>
+                            <string>Info.plist:NSExtension</string>
+                        </array>
+                        <key>Definitions</key>
+                        <dict>
+                            <key>Info.plist:NSExtension</key>
+                            <string>&lt;key&gt;NSExtension&lt;/key&gt;
+&lt;dict&gt;
+    &lt;key&gt;NSExtensionAttributes&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;NSExtensionActivationRule&lt;/key&gt;
+        &lt;string&gt;TRUEPREDICATE&lt;/string&gt;
+        &lt;key&gt;NSExtensionServiceRoleType&lt;/key&gt;
+        &lt;string&gt;NSExtensionServiceRoleTypeEditor&lt;/string&gt;
+    &lt;/dict&gt;
+    &lt;key&gt;NSExtensionPrincipalClass&lt;/key&gt;
+    &lt;string&gt;___VARIABLE_moduleNamePrefixForClasses:XML___ActionRequestHandler&lt;/string&gt;
+    &lt;key&gt;NSExtensionPointIdentifier&lt;/key&gt;
+    &lt;string&gt;com.apple.services&lt;/string&gt;
+&lt;/dict&gt;
+&lt;key&gt;CFBundleIconFile&lt;/key&gt;
+&lt;string&gt;icon&lt;/string&gt;
+</string>
+                        </dict>
+                    </dict>
+                </array>
+            </dict>
+        </dict>
+    </array>
+	<key>Nodes</key>
+	<array>
+		<string>icon.icns</string>
+		<string>___PACKAGENAMEASIDENTIFIER___.entitlements</string>
+	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>___PACKAGENAMEASIDENTIFIER___.entitlements</key>
+		<dict>
+			<key>Path</key>
+			<string>___PACKAGENAMEASIDENTIFIER___.entitlements</string>
+			<key>Group</key>
+			<string>Supporting Files</string>
+            <key>TargetIdentifiers</key>
+            <array/>
+		</dict>
+		<key>icon.icns</key>
+		<dict>
+			<key>Path</key>
+			<string>icon.icns</string>
+			<key>Group</key>
+			<string>Supporting Files</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

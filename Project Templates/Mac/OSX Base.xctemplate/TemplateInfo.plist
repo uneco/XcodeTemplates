@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.osxBase</string>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.macosx</string>
+	</array>
+	<key>Project</key>
+	<dict>
+		<key>SDK</key>
+		<string>macosx</string>
+		<key>SharedSettings</key>
+		<dict>
+			<key>MACOSX_DEPLOYMENT_TARGET</key>
+			<string>___RUNNINGOSXVERSION___</string>
+            <key>CODE_SIGN_IDENTITY</key>
+            <string>-</string>
+		</dict>
+	</dict>
+    <key>Options</key>
+    <array>
+        <dict>
+            <key>Identifier</key>
+            <string>languageChoice</string>
+            <key>Units</key>
+            <dict>
+                <key>Objective-C</key>
+                <dict>
+                </dict>
+                <key>Swift</key>
+                <dict>
+                    <key>Definitions</key>
+                    <dict>
+                        <key>*:imports:importCocoa</key>
+                        <string>import Cocoa</string>
+                    </dict>
+                </dict>
+            </dict>
+        </dict>
+    </array>
+	<key>Definitions</key>
+	<dict>
+		<key>Info.plist:NSHumanReadableCopyright</key>
+		<string>___NSHUMANREADABLECOPYRIGHTPLIST___</string>
+        <!-- This is defined globally for templates that don't want language choice -->
+        <key>*:imports:importCocoa</key>
+        <string>#import &lt;Cocoa/Cocoa.h&gt;</string>
+        <key>*:imports:importCocoaForUmbrellaHeader</key>
+        <string>#import &lt;Cocoa/Cocoa.h&gt;</string>
+	</dict>
+</dict>
+</plist>

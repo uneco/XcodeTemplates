@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Kind</key>
+    <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+    <key>Identifier</key>
+    <string>com.apple.dt.unit.cocoaApplicationBase</string>
+    <key>Ancestors</key>
+    <array>
+        <string>com.apple.dt.unit.applicationBase</string>
+        <string>com.apple.dt.unit.osxBase</string>
+    </array>
+    <key>Targets</key>
+    <array>
+        <dict>
+            <key>TargetIdentifier</key>
+            <string>com.apple.dt.cocoaApplicationTarget</string>
+            <key>SharedSettings</key>
+            <dict>
+                <key>COMBINE_HIDPI_IMAGES</key>
+                <string>YES</string>
+                <key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+                <string>AppIcon</string>
+                <key>LD_RUNPATH_SEARCH_PATHS</key>
+                <string>$(inherited) @executable_path/../Frameworks</string>
+            </dict>
+        </dict>
+    </array>
+    <key>Nodes</key>
+    <array>
+        <string>Info.plist:Icon</string>
+        <string>Info.plist:DeploymentTarget</string>
+        <string>Info.plist:MainNib</string>
+        <string>Info.plist:PrincipalClass</string>
+        <string>Info.plist:NSHumanReadableCopyright</string>
+        <string>Assets.xcassets</string>
+     </array>
+    <key>Definitions</key>
+    <dict>
+        <key>Assets.xcassets</key>
+        <dict>
+            <key>Path</key>
+            <string>Images.xcassets</string>
+            <key>SortOrder</key>
+            <integer>100</integer>
+        </dict>
+        <key>Info.plist:DeploymentTarget</key>
+        <string>&lt;key&gt;LSMinimumSystemVersion&lt;/key&gt;
+&lt;string&gt;$(MACOSX_DEPLOYMENT_TARGET)&lt;/string&gt;
+</string>
+        <key>Info.plist:MainNib</key>
+        <string>&lt;key&gt;NSMainNibFile&lt;/key&gt;
+&lt;string&gt;MainMenu&lt;/string&gt;
+</string>
+        <key>Info.plist:PrincipalClass</key>
+        <string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;
+&lt;string&gt;NSApplication&lt;/string&gt;
+</string>
+        <key>Info.plist:Icon</key>
+        <string>&lt;key&gt;CFBundleIconFile&lt;/key&gt;
+&lt;string&gt;&lt;/string&gt;
+</string>
+        <!-- This is defined globally for templates that don't want language choice -->
+        <key>main.m:main:NSApplicationMain</key>
+        <string>return NSApplicationMain(argc, argv);</string>
+    </dict>
+</dict>
+</plist>
